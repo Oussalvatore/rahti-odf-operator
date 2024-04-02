@@ -30,8 +30,8 @@ jobs:
 
     - name: Build and push docker images
       env:
-        REGISTRY_NAMESPACE: ${{ github.event.inputs.REGISTRY_NAMESPACE }}
-        IMAGE_TAG: ${{ github.event.inputs.IMAGE_TAG }}
+        REGISTRY_NAMESPACE: ${{ inputs.REGISTRY_NAMESPACE }}
+        IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
       run: |
         make docker-build docker-push
         make bundle-build bundle-push
