@@ -33,6 +33,7 @@ jobs:
 
     - name: Build and push docker images
       env:
+        IMAGE_REGISTRY: ${{ inputs.IMAGE_REGISTRY }}
         REGISTRY_NAMESPACE: ${{ inputs.REGISTRY_NAMESPACE }}
         IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
       run: |
