@@ -3,6 +3,9 @@ name: image-publisher
 on:
   workflow_dispatch:
     inputs:
+      IMAGE_REGISTRY:
+        required: true
+        default: docker.io
       REGISTRY_NAMESPACE:
         required: true
         default: oussabe
