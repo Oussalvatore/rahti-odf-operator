@@ -4,8 +4,6 @@ Date: Wed, 3 Apr 2024 11:57:11 +0000
 Subject: [PATCH] Build and push workflow
 
 ---
-
-
 diff --git a/.github/workflows/build-and-push.yaml b/.github/workflows/build-and-push.yaml
 new file mode 100644
 index 00000000..681f7785
