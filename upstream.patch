@@ -43,3 +43,4 @@ index 00000000..681f7785
 +        make docker-build docker-push
 +        make bundle-build bundle-push
 +        make catalog-build catalog-push
+\ No newline at end of file
