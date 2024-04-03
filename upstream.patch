@@ -14,18 +14,7 @@ index 00000000..681f7785
 @@ -0,0 +1,42 @@
 +name: image-builder-publisher
 +
-+on:
-+  workflow_dispatch:
-+    inputs:
-+      IMAGE_REGISTRY:
-+        required: true
-+        default: docker.io
-+      REGISTRY_NAMESPACE:
-+        required: true
-+        default: oussabe
-+      IMAGE_TAG:
-+        required: true
-+        default: latest
++on: push
 +
 +jobs:
 +  docker-push:
@@ -47,9 +36,9 @@ index 00000000..681f7785
 +
 +    - name: Build and push docker images
 +      env:
-+        IMAGE_REGISTRY: ${{ inputs.IMAGE_REGISTRY }}
-+        REGISTRY_NAMESPACE: ${{ inputs.REGISTRY_NAMESPACE }}
-+        IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
++        IMAGE_REGISTRY: docker.io
++        REGISTRY_NAMESPACE: oussabe
++        IMAGE_TAG: latest
 +      run: |
 +        make docker-build docker-push
 +        make bundle-build bundle-push
