@@ -4,7 +4,7 @@ index 00000000..681f7785
 --- /dev/null
 +++ b/.github/workflows/build-and-push.yaml
 @@ -0,0 +1,42 @@
-+name: image-publisher
++name: image-builder-publisher
 +
 +on:
 +  workflow_dispatch:
