@@ -1,17 +1,15 @@
-From 5d8bf8dc3ed89c2a4b1e3eb63dd98cd7f23b9ff2 Mon Sep 17 00:00:00 2001
 From: Oussama Bekkouche <oussabe@csc.fi>
-Date: Wed, 3 Apr 2024 11:57:11 +0000
-Subject: [PATCH] Build and push workflow
+Date: Wed Apr 3 12:40:18 2024 +0300
+Subject: [PATCH] Add build and push workflow
 
 ---
 diff --git a/.github/workflows/build-and-push.yaml b/.github/workflows/build-and-push.yaml
 new file mode 100644
-index 00000000..681f7785
+index 00000000..d4e5a57d
 --- /dev/null
 +++ b/.github/workflows/build-and-push.yaml
-@@ -0,0 +1,42 @@
-+name: image-builder-publisher
-+
+@@ -0,0 +1,30 @@
++---
 +on: push
 +
 +jobs:
