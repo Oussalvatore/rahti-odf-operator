@@ -5,10 +5,10 @@ Subject: [PATCH] Deployment workflow
 ---
 diff --git a/.github/workflows/build-and-push.yaml b/.github/workflows/build-and-push.yaml
 new file mode 100644
-index 00000000..d4e5a57d
+index 00000000..7e98c620
 --- /dev/null
 +++ b/.github/workflows/build-and-push.yaml
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,32 @@
 +---
 +on: push
 +
@@ -34,8 +34,10 @@ index 00000000..d4e5a57d
 +      env:
 +        IMAGE_REGISTRY: docker.io
 +        REGISTRY_NAMESPACE: oussabe
-+        IMAGE_TAG: latest
 +      run: |
++        branch="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
++        version="${branch#release-}"
++        export IMAGE_TAG=$(date "+${version}-%Y-%m-%d-%H%M%S")
 +        make docker-build docker-push
 +        make bundle-build bundle-push
 +        make catalog-build catalog-push
