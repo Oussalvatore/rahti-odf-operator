@@ -27,6 +27,7 @@ jobs:
         branch="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
         version="${branch#release-}"
         export IMAGE_TAG=$(date "+${version}-%Y-%m-%d-%H%M%S")
+        export OCS_BUNDLE_IMG="docker.io/oussabe/ocs-operator-bundle:4.15-2024-04-30-092127"
         make docker-build docker-push
         make bundle-build bundle-push
         make catalog-build catalog-push
